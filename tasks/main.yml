@@ -49,7 +49,7 @@
     owner: root
     group: root
   notify:
-    - restart process exporter
+    - restart apache exporter
 
   when: not ansible_check_mode
 - name: Copy the apache_exporter systemd service file
@@ -62,7 +62,7 @@
     mode: 0644
   no_log: true
   notify:
-    - restart process exporter
+    - restart apache exporter
 
 - name: Ensure apache_exporter is enabled on boot
   become: true
