@@ -1,5 +1,4 @@
 ---
----
 - include: preflight.yml
 
 - name: Create the Apache Exporter group
