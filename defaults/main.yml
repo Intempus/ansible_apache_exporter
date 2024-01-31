@@ -1,6 +1,7 @@
 ---
-apache_exporter_version: 0.6.0
-apache_exporter_telemetry_address: "0.0.0.0:9117"
+apache_exporter_version: 1.0.6
+apache_exporter_listen_address: "0.0.0.0:9117"
 apache_exporter_telemetry_endpoint: "/metrics"
-apache_exporter_incecure: "false"
+apache_exporter_insecure: false
 apache_exporter_scrape_uri: "http://localhost/server-status/?auto"
+apache_exporter_extra_args: "--web.config.file=/etc/node_exporter/config.yaml"

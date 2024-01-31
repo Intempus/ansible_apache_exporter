@@ -9,10 +9,10 @@ Type=simple
 User={{ __apache_exporter_user }}
 Group={{ __apache_exporter_group }}
 ExecStart=/usr/local/bin/apache_exporter \
-    -telemetry.address {{ apache_exporter_telemetry_address|default("0.0.0.0:9117") }} \
-    -scrape_uri {{ apache_exporter_scrape_uri|default("http://localhost/server-status/?auto") }} \
-    -telemetry.endpoint {{ apache_exporter_telemetry_endpoint|default("/metrics") }} \
-    -insecure {{ apache_exporter_incecure|default("false") }}
+    --web.listen-address {{ apache_exporter_listen_address|default("0.0.0.0:9117") }} \
+    --scrape_uri {{ apache_exporter_scrape_uri|default("http://localhost/server-status/?auto") }} \
+    --telemetry.endpoint {{ apache_exporter_telemetry_endpoint|default("/metrics") }} \
+    {{ apache_exporter_extra_args|default("") }}{% if apache_exporter_insecure %} --insecure {% endif %} \
 
 SyslogIdentifier=apache_exporter
 Restart=always
