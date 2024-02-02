@@ -68,5 +68,6 @@
   become: true
   systemd:
     name: apache_exporter
+    daemon_reload: true
     state: started
     enabled: true
